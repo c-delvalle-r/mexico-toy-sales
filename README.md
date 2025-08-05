@@ -1,10 +1,14 @@
+---
+
+---
 # Mexico Toy Sales
+
 Data project from Mexico toy sales dataset from a fictional company from mavenanalytics.io.
 
 Dataset: https://mavenanalytics.io/data-playground?order=date_added%2Cdesc&search=mexico%20toy
 
 ### Data Stack Used:
-> MySQL, DBngin, dBeaver
+> MySQL, DBngin, dBeaver, PowerBI
 
 
 ## Problem Statement
@@ -25,6 +29,8 @@ Maven Toys, a fictional toy company with 50 stores in Mexico and 35 different pr
 
 
 ## Steps Followed
+
+### Download a clean data
 1. Download data.
 2. Create MySQL server using DBngin.
 3. Connect to server using dBeaver.
@@ -33,7 +39,8 @@ Maven Toys, a fictional toy company with 50 stores in Mexico and 35 different pr
 6. Create clean tables:
     1. No missing values were found.
     2. Dates and currency values were strings originally, transformed to date and numeric values accordingly
-```
+
+```sql
 create table maven_toys_sales.fact_sales as (
     select 
 		Sale_ID as sale_id,
@@ -64,5 +71,13 @@ create table maven_toys_sales.dim_product as (
 	from maven_toys_sales.products 
 );
 ```
+### Creating a Dashboard using PowerBI
+7. Export the clean tables to csv.
+8. Create the .pbix file, import the data and create the data model with all four tables.
+9. Create the *profit* and *revenue* measures using DAX.
 
- 
+```dax
+```
+
+10. Create the executive summary view
+[]()
